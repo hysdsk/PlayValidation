@@ -1,0 +1,5 @@
+
+tr.error input ,
+tr.error select {
+	background-color: red;
+}

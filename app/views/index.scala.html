@@ -1,0 +1,46 @@
+@(playForm: Form[forms.IndexForm])
+
+@import collection.JavaConversions._
+@import helper._
+
+@main("Validation Test") {
+    <h1>フォーム画面</h1>
+    @form(action = routes.AppController.post()) {
+        @formTable{
+            @inputText(
+                playForm("name"),
+                '_label -> "名前"
+            )(tableRowInput, implicitly[Messages])
+
+            @inputText(
+                playForm("age"),
+                '_label -> "年齢",
+                'placeholder -> "15-55歳"
+            )(tableRowInput, implicitly[Messages])
+
+            @inputText(
+                playForm("email"),
+                '_label -> "メールアドレス"
+            )(tableRowInput, implicitly[Messages])
+
+            @inputPassword(
+                playForm("password"),
+                '_label -> "パスワード",
+                'placeholder -> "英数字のみ"
+            )(tableRowInput, implicitly[Messages])
+
+            @inputPassword(
+                playForm("againPassword"),
+                '_label -> "再入力パスワード"
+            )(tableRowInput, implicitly[Messages])
+
+            @select(
+                playForm("job"),
+                options = common.constants.Job.getMap().toSeq,
+                '_label -> "職業"
+            )(tableRowInput, implicitly[Messages])
+
+        }
+        <button>送信</button>
+    }
+}

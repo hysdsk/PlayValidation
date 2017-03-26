@@ -1,0 +1,6 @@
+error.required = 入力必須です
+error.invalid = 正しい形式で入力してください
+error.max = {0}歳までで入力してください
+error.email = メールアドレスを入力してください
+error.minLength = {0}文字以上を入力してください
+error.maxLength = {0}文字以下を入力してください
