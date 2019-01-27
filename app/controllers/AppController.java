@@ -1,6 +1,7 @@
 package controllers;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import forms.IndexForm;
 import play.data.Form;
@@ -13,6 +14,7 @@ import views.html.*;
  * コントローラー
  * @author d_rabbit
  */
+@Singleton
 public class AppController extends Controller {
 
 	@Inject
